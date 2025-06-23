@@ -1,0 +1,50 @@
+version: '3.8'
+
+services:
+  app:
+    image: bitnami/laravel:latest
+    container_name: laravel_app
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      - DB_CONNECTION=mysql
+      - DB_HOST=mariadb
+      - DB_PORT=3306
+      - DB_DATABASE=laravel
+      - DB_USERNAME=laravel_user
+      - DB_PASSWORD=laravel_password
+      - APP_NAME=Laravel
+      - APP_ENV=local
+      - APP_DEBUG=true
+      - APP_URL=http://localhost:8000
+    volumes:
+      - ./:/app
+      - ./docker/init-laravel.sh:/usr/local/bin/init-laravel.sh
+    command: ["bash", "/usr/local/bin/init-laravel.sh"]
+    depends_on:
+      - mariadb
+    networks:
+      - laravel
+
+  mariadb:
+    image: mariadb:latest
+    container_name: mariadb_db
+    restart: unless-stopped
+    ports:
+      - "3307:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=root_password
+      - MYSQL_DATABASE=laravel
+      - MYSQL_USER=laravel_user
+      - MYSQL_PASSWORD=laravel_password
+    networks:
+      - laravel
+
+volumes:
+  mariadb_data:
+    driver: local
+
+networks:
+  laravel:
+    driver: bridge 
