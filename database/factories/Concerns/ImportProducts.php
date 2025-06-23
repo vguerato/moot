@@ -16,7 +16,12 @@ trait ImportProducts
      */
     protected function getProducts(): array
     {
-        $products = json_decode(Storage::disk('local')->get('products.json'), true) ?? [];
+        $filePath = base_path('products.json');
+        if (!file_exists($filePath)) {
+            throw new Exception('products.json not found.');
+        }
+
+        $products = json_decode(file_get_contents($filePath), true) ?? [];
         if (empty($products)) {
             throw new Exception('Invalid product list.');
         }

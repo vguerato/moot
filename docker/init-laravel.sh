@@ -4,6 +4,8 @@ until php -r "try { \$pdo = new PDO('mysql:host=$DB_HOST;port=$DB_PORT', '$DB_US
 
 composer install --optimize-autoloader --no-interaction
 
+[ ! -f .env ] && cp .env.example .env
+
 php artisan key:generate
 
 php artisan optimize

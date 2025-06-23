@@ -1,0 +1,64 @@
+{
+  "products": [
+    {
+      "name": "Coca-Cola",
+      "price": 10.00,
+      "category": "Bebidas",
+      "brand": "Coca-Cola"
+    },
+    {
+      "name": "Chocolate",
+      "price": 10.00,
+      "category": "Doces",
+      "brand": "Nestlé"
+    },
+    {
+      "name": "Feijão",
+      "price": 10.00,
+      "category": "Grãos",
+      "brand": "Broto Legal"
+    },
+    {
+      "name": "Arroz",
+      "price": 10.00,
+      "category": "Grãos",
+      "brand": "São João"
+    },
+    {
+      "name": "Leite",
+      "price": 10.00,
+      "category": "Laticínios",
+      "brand": "Itambé"
+    },
+    {
+      "name": "Contra Filé",
+      "price": 10.00,
+      "category": "Carnes",
+      "brand": "Friboi"
+    },
+    {
+      "name": "Pão de Queijo",
+      "price": 10.00,
+      "category": "Padaria",
+      "brand": "Padaria do João"
+    },
+    {
+      "name": "Pão Francês",
+      "price": 10.00,
+      "category": "Padaria",
+      "brand": "Padaria do João"
+    },
+    {
+      "name": "Café",
+      "price": 10.00,
+      "category": "Bebidas",
+      "brand": "Melitta"
+    },
+    {
+      "name": "Água",
+      "price": 10.00,
+      "category": "Bebidas",
+      "brand": "Nestlé"
+    }
+  ]
+}
